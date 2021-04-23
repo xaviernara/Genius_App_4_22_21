@@ -1,4 +1,4 @@
-package com.example.genius.adaptor
+package com.example.genius.repo
 
 import com.example.genius.model.GeniusSearchResponse
 import retrofit2.http.GET
