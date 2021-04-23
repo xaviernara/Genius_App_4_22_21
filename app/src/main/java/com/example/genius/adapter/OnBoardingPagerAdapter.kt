@@ -1,4 +1,4 @@
-package com.example.genius.adaptor
+package com.example.genius.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
