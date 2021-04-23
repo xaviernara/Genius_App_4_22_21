@@ -2,6 +2,7 @@ package com.example.genius.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
 @Parcelize
 data class Result(
@@ -18,9 +19,9 @@ data class Result(
     val pyongs_count: Int?, // 1130
     val song_art_image_thumbnail_url: String?, // https://images.genius.com/483306c535608c27f9e3781b854dc91d.300x300x1.png
     val song_art_image_url: String?, // https://images.genius.com/483306c535608c27f9e3781b854dc91d.1000x1000x1.png
-    val song_art_primary_color: Any?, // null
-    val song_art_secondary_color: Any?, // null
-    val song_art_text_color: Any?, // null
+    val song_art_primary_color: @RawValue() Any?, // null
+    val song_art_secondary_color: @RawValue() Any?, // null
+    val song_art_text_color: @RawValue() Any?, // null
     val stats: Stats?,
     val title: String?, // HUMBLE.
     val title_with_featured: String?, // HUMBLE.
