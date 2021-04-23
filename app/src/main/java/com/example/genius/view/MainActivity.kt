@@ -1,7 +1,8 @@
-package com.example.genius
+package com.example.genius.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.genius.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
