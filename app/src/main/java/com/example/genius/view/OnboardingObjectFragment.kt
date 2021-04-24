@@ -20,8 +20,8 @@ class OnboardingObjectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //super.onViewCreated(view, savedInstanceState)
         arguments?.takeIf { it.containsKey("Object") }?.apply{
-            val textView = TextView = view.findViewById(android.R.id.text)
-            textView.text = getInt("Object")
+//            val textView = TextView = view.findViewById(android.R.id.text)
+//            textView.text = getInt("Object")
         }
     }
 }
