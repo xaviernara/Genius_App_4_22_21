@@ -1,4 +1,4 @@
-package com.example.genius.model
+package com.example.genius.model.geniusSearch
 
 import android.os.Parcelable
 import androidx.room.Entity

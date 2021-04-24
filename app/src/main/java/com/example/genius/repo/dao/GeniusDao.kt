@@ -1,7 +1,7 @@
 package com.example.genius.repo.dao
 
 import androidx.room.*
-import com.example.genius.model.GeniusSearchResponse
+import com.example.genius.model.geniusSearch.GeniusSearchResponse
 import kotlinx.coroutines.flow.Flow
 
 
@@ -15,7 +15,7 @@ interface GeniusDao {
     suspend fun insertGeniusSearchResponses(geniusSearchResponse: GeniusSearchResponse)
 
     @Update
-    suspend fun updateGeniusSearchResponses(geniusSearchResponse:GeniusSearchResponse)
+    suspend fun updateGeniusSearchResponses(geniusSearchResponse: GeniusSearchResponse)
 
     @Delete
     suspend fun deleteGeniusSearchResponses(geniusSearchResponse: GeniusSearchResponse)

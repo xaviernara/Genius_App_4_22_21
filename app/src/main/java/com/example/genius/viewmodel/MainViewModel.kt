@@ -1,12 +1,11 @@
 package com.example.genius.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
-import com.example.genius.model.GeniusSearchResponse
+import androidx.lifecycle.*
+import com.example.genius.model.geniusSearch.GeniusSearchResponse
 import com.example.genius.repo.GeniusRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,7 +18,21 @@ class MainViewModel @Inject constructor(private val geniusRepo:GeniusRepo) : Vie
     private val geniusSearchResponseMLD : MutableLiveData<GeniusSearchResponse> = TODO()
 
 
-    val geniusSearchResponseLD = geniusRepo.geniusSearchFlow.asLiveData(viewModelScope.coroutineContext)
+    val geniusSearchResponseListLD = geniusRepo.geniusSearchFlow.asLiveData(viewModelScope.coroutineContext)
+
+    val geniusResponseLD : LiveData<GeniusSearchResponse>
+        get() = geniusSearchResponseMLD
+
+
+
+
+    fun createGeniusResponse(artistName: String ){
+
+        viewModelScope.launch(Dispatchers.IO){
+           val geniusSearch =  geniusRepo.createGeniusSearchResponse(artistName)
+            geniusSearchResponseMLD.postValue(geniusSearch)
+        }
+    }
 
 
 

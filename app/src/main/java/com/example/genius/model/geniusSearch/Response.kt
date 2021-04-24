@@ -1,9 +1,9 @@
-package com.example.genius.model
+package com.example.genius.model.geniusSearch
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Meta(
-    val status: Int? // 200
+data class Response(
+    val hits: List<Hit>?
 ): Parcelable
