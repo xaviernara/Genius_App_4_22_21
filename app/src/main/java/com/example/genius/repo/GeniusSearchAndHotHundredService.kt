@@ -15,6 +15,7 @@ interface GeniusSearchAndHotHundredService {
                                        @Header("x-rapidapi-key") key: String): GeniusSearchResponse
 
     @GET("hot-100/")
-    suspend fun getHotHundredChartService(@Query("date") date:String, @Query("range") range:String, @Header("x-rapidapi-key") key: String): HotHundredChartsResponse
-
+    suspend fun getHotHundredChartService(@Query("date") date:String,
+                                          @Query("range") range:String,
+                                          @Header("x-rapidapi-key") key: String): HotHundredChartsResponse
 }
