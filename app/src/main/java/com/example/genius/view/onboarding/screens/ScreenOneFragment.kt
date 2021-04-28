@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.genius.R
+import com.example.genius.view.MainActivity
 
 class ScreenOneFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -23,6 +24,7 @@ class ScreenOneFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //MainActivity.bottomNavBarVisibility(false)
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_screen_one, container, false)

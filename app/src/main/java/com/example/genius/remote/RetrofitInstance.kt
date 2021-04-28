@@ -1,7 +1,8 @@
 package com.example.genius.remote
 
-import com.example.genius.repo.GeniusSearchAndHotHundredService
+import com.example.genius.repo.ApiService
 import retrofit2.Retrofit
+import retrofit2.create
 import javax.inject.Inject
 
 class RetrofitInstance @Inject constructor(private val retrofit: Retrofit){
@@ -21,7 +22,11 @@ class RetrofitInstance @Inject constructor(private val retrofit: Retrofit){
 
 
 
-    val geniusService : GeniusSearchAndHotHundredService by lazy{retrofit.create(GeniusSearchAndHotHundredService::class.java)}
+    val geniusService : ApiService by lazy{retrofit.create(ApiService::class.java)}
+
+    val hot100Service : ApiService by lazy{retrofit.create(ApiService::class.java)}
+
+    val googleNewsService : ApiService by lazy{retrofit.create(ApiService::class.java)}
 
 
 

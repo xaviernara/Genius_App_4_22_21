@@ -1,11 +1,12 @@
 package com.example.genius.repo
 
 import com.example.genius.model.geniusSearch.GeniusSearchResponse
+import com.example.genius.model.hotHundredCharts.HotHundredChartsResponse
 import com.example.genius.remote.RetrofitInstance
 import com.example.genius.repo.dao.GeniusDao
 import javax.inject.Inject
 
-class GeniusRepo @Inject constructor(private val geniusDao: GeniusDao, private val retrofitInstance: RetrofitInstance){
+class GeniusRepo @Inject constructor(private val geniusDao: GeniusDao, private val retrofitInstance: RetrofitInstance, private val retrofitInstance2: RetrofitInstance, private val retrofitInstance3: RetrofitInstance ){
 
 
  val geniusSearchFlow = geniusDao.selectAllGeniusSearchResponses()
@@ -19,4 +20,8 @@ class GeniusRepo @Inject constructor(private val geniusDao: GeniusDao, private v
     suspend fun createGeniusSearchResponse(artistName: String): GeniusSearchResponse {
         return retrofitInstance.geniusService.getGeniusSearchService(artistName,"1086eabd4emsh9b6930a4c6fbefep1e9dc5jsn5801c00cfa54")
     }
+
+//    suspend fun createHot100ChartResponse(date: String, range: String) : HotHundredChartsResponse{
+//        return
+//    }
 }

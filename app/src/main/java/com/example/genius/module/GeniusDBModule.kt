@@ -33,7 +33,23 @@ class GeniusDBModule {
 
 
 
-    private val client = HttpLoggingInterceptor()
+    private val geniusClient = HttpLoggingInterceptor()
+        .apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+        .let { loginInterceptor ->
+            OkHttpClient.Builder().addInterceptor(loginInterceptor).build()
+        }
+
+    private val hot100Client = HttpLoggingInterceptor()
+        .apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+        .let { loginInterceptor ->
+            OkHttpClient.Builder().addInterceptor(loginInterceptor).build()
+        }
+
+    private val googleNewsClient = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
@@ -48,7 +64,32 @@ class GeniusDBModule {
         return Retrofit.Builder().
         baseUrl("https://genius.p.rapidapi.com/search")
             .addConverterFactory(MoshiConverterFactory.create())
-            .client(client).build()
+            .client(geniusClient).build()
+
+
+    }
+
+    @Provides
+    @Singleton
+    fun providesRefrofitInstanceGoogleNews(): Retrofit {
+
+        return Retrofit.Builder().
+        baseUrl("https://google-news1.p.rapidapi.com/")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .client(hot100Client).build()
+
+
+    }
+
+@Provides
+    @Singleton
+    fun providesRefrofitInstanceHotHundred(): Retrofit {
+
+        return Retrofit.Builder().
+        baseUrl("https://billboard-api2.p.rapidapi.com")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .client(googleNewsClient).build()
+
 
     }
 

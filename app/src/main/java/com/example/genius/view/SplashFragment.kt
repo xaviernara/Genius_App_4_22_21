@@ -28,6 +28,7 @@ class SplashFragment : Fragment() {
             findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
         },3000)
 
+        MainActivity.bottomNavBarVisibility(false)
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_splash, container, false)

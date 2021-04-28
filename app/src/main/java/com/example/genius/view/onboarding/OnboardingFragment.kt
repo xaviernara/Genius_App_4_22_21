@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.genius.R
 import com.example.genius.adapter.OnBoardingPagerAdapter
+import com.example.genius.view.MainActivity
 import com.example.genius.view.onboarding.screens.ScreenOneFragment
 import com.example.genius.view.onboarding.screens.SecondScreenFragment
 import com.example.genius.view.onboarding.screens.ThirdScreenFragment
@@ -34,6 +35,11 @@ class OnboardingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_onboarding, container, false)
 
         view.viewpager.adapter = adapter
+
+        MainActivity.bottomNavBarVisibility(false)
+
+
+
         // Inflate the layout for this fragment
         return view
     }
